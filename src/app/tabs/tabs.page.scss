@@ -1,1 +1,10 @@
-
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-between;
+    
+}
+.card{
+    margin-top: 250px;
+}

@@ -1,0 +1,25 @@
+<ion-content >
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+        <ion-card style="background-color: aliceblue">
+          <ion-card-content >
+            <form  class="content">
+              <mat-form-field appearance="outline" >
+                  <mat-label >Username</mat-label>
+                  <input matInput placeholder="Username">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password">
+              </mat-form-field><br>
+              <button class="button" mat-raised-button color="primary" (click) = "login()">Login</button>
+              <button class="button" mat-raised-button color="warn" (click)="register()">Register</button>
+              <button class="button" mat-raised-button color="warn">Google Login</button>
+
+            </form>
+            </ion-card-content>
+          </ion-card>
+      </ion-row>
+  </ion-grid>
+</ion-content>
+

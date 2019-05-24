@@ -7,6 +7,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegisterPage } from './register.page';
 import { MaterialModule } from "../../material/material/material.module";
+import { GooglePlus } from "@ionic-native/google-plus/ngx";
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
 
 const routes: Routes = [
   {
@@ -21,8 +25,12 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage],
+  providers: [
+    GooglePlus
+  ]
 })
 export class RegisterPageModule {}

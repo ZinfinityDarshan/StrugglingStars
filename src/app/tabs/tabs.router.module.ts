@@ -44,6 +44,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'notify',
+        children: [
+          {
+            path: '',
+            loadChildren: './notification/notification.module#NotificationPageModule'
+          }
+        ]
+      },
+      {
+        path: 'addpost',
+        children: [
+          {
+            path: '',
+            loadChildren: './addpost/addpost.module#AddpostPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

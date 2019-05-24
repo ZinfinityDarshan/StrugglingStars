@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Trending</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+    <div style="display: flex; justify-content: center">
+      <mat-form-field appearance="outline" style="width: 95%; justify-content: center">
+          <mat-label>Search profiles</mat-label>
+          <input matInput placeholder="Placeholder">
+          <ion-icon matSuffix ios="ios-search" md="md-search" style="font-size: 24px"></ion-icon>
+      </mat-form-field> 
+    </div>
+      <div class="list">
+          <div scrollX="true">
+              <ion-chip>
+                <ion-icon name="heart" color="dark"></ion-icon>
+                <ion-label>Default</ion-label>
+              </ion-chip>
+            </div>
+      </div>
+<mat-divider></mat-divider>
 </ion-content>

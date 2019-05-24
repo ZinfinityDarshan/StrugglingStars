@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "390829099063",
+    "firebase_url": "https://acc009auth.firebaseio.com",
+    "project_id": "acc009auth",
+    "storage_bucket": "acc009auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390829099063:android:26a8c082bfd371f6",
+        "android_client_info": {
+          "package_name": "in.zinfinity.acc009"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390829099063-h9sr0ltkudeg9sp454tv6h87rt0gcphp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNcSQR4xxtEY8LH1HjUXrzqfZ3SUR8RCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390829099063-h9sr0ltkudeg9sp454tv6h87rt0gcphp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "390829099063-thr1qkb0ntl2uj2l899kt24ap45h3h6c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.zinfinity.acc009"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

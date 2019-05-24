@@ -11,37 +11,21 @@
         <ion-label>Trending</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="searchtab">
-      <ion-icon name="search"></ion-icon>
-      <ion-label>Search</ion-label>
+    <ion-tab-button (click) = "openBottomSheet()">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add Post</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notify">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-label>Notification</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="acounttab">
       <ion-icon name="contact"></ion-icon>
       <ion-label>Account</ion-label>
     </ion-tab-button>
-
-
   </ion-tab-bar>
 
 </ion-tabs>
 
-
-<!-- <ion-content >
-    <ion-card style="margin-top: 250px">
-        <ion-card-content >
-          <form  class="content">
-            <mat-form-field appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="Username">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Password">
-            </mat-form-field><br>
-            <button mat-raised-button color="primary">Login</button>
-            <button mat-raised-button color="warn">Register</button>
-          </form>
-        </ion-card-content>
-    </ion-card>
-</ion-content> -->

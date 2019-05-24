@@ -1,0 +1,15 @@
+.item{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    .fontfornotification{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 15px;
+    }
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

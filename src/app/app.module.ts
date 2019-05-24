@@ -12,17 +12,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 import { TabsPageRoutingModule } from "../app/tabs/tabs.router.module";
 import { TabsPageModule } from './tabs/tabs.module';
-
+import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { GooglePlus } from "@ionic-native/google-plus/ngx";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    BrowserAnimationsModule, MaterialModule, TabsPageRoutingModule, TabsPageModule],
+  imports: [
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+    BrowserAnimationsModule, MaterialModule, TabsPageRoutingModule, TabsPageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
+    GooglePlus,
+    PhotoLibrary,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+
   ],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 import { MaterialModule } from '../material/material/material.module';
+import {BottomSheetOverviewExampleSheet} from './tabs.page'
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { MaterialModule } from '../material/material/material.module';
     TabsPageRoutingModule,
     MaterialModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, BottomSheetOverviewExampleSheet],
+  entryComponents: [BottomSheetOverviewExampleSheet]
 })
 export class TabsPageModule {}

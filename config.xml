@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="in.zinfinity.acc009" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>star</name>
+<widget id="in.zinfinity.acc0090" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Struggling Stars</name>
     <description>Struggling Stars Official App </description>
     <author email="info@zinfinity.in" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />

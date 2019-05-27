@@ -17,6 +17,12 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { GooglePlus } from "@ionic-native/google-plus/ngx";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,13 +31,19 @@ import { GooglePlus } from "@ionic-native/google-plus/ngx";
     BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     BrowserAnimationsModule, MaterialModule, TabsPageRoutingModule, TabsPageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     GooglePlus,
     PhotoLibrary,
+    HttpClient,
+    NativeStorage,
+    AngularFireAuth,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
 
   ],

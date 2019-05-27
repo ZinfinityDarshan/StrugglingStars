@@ -3,20 +3,19 @@
     <ion-row justify-content-center align-items-center style="height: 100%">
         <ion-card style="background-color: aliceblue">
           <ion-card-content >
-            <form  class="content">
+            <form [formGroup]="loginFrom" (ngSubmit)="login()"  class="content">
               <mat-form-field appearance="outline" >
                   <mat-label >Username</mat-label>
-                  <input matInput placeholder="Username">
+                  <input formControlName="username" matInput placeholder="Username">
               </mat-form-field>
               <mat-form-field appearance="outline">
                   <mat-label>Password</mat-label>
-                  <input matInput placeholder="Password">
+                  <input type="password" formControlName="password" matInput placeholder="Password">
               </mat-form-field><br>
-              <button class="button" mat-raised-button color="primary" (click) = "login()">Login</button>
-              <button class="button" mat-raised-button color="warn" (click)="register()">Register</button>
-              <button class="button" mat-raised-button color="warn" (click) = "googleLogin()">Google Login</button>
-
+              <button class="button" mat-raised-button color="primary">Login</button>
             </form>
+              <button class="button" mat-raised-button color="warn" (click)="register()">Register</button>
+<!--               <button class="button" mat-raised-button color="warn" (click) = "googleLogin()">Google Login</button> -->
             </ion-card-content>
           </ion-card>
       </ion-row>

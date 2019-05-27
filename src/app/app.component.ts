@@ -14,7 +14,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
-  ) 
+  )
+   
   {
     this.initializeApp();
   //  localStorage.setItem('intro', 'false')

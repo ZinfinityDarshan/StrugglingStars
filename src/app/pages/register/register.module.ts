@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -10,6 +10,10 @@ import { MaterialModule } from "../../material/material/material.module";
 import { GooglePlus } from "@ionic-native/google-plus/ngx";
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+
 
 
 const routes: Routes = [
@@ -23,6 +27,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
     MaterialModule,
@@ -30,7 +35,9 @@ const routes: Routes = [
   ],
   declarations: [RegisterPage],
   providers: [
-    GooglePlus
+    GooglePlus,
+    AuthService,
+    AngularFireAuth
   ]
 })
 export class RegisterPageModule {}

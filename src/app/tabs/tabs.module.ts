@@ -7,7 +7,11 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 import { MaterialModule } from '../material/material/material.module';
-import {BottomSheetOverviewExampleSheet} from './tabs.page'
+import {BottomSheetOverviewExampleSheet} from './tabs.page';
+import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 @NgModule({
   imports: [
@@ -16,6 +20,12 @@ import {BottomSheetOverviewExampleSheet} from './tabs.page'
     FormsModule,
     TabsPageRoutingModule,
     MaterialModule
+  ],
+  providers:[
+  ImagePicker,
+  PhotoLibrary,
+  Base64,
+  File,
   ],
   declarations: [TabsPage, BottomSheetOverviewExampleSheet],
   entryComponents: [BottomSheetOverviewExampleSheet]

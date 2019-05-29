@@ -21,30 +21,34 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
-
-
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { Base64 } from '@ionic-native/base64/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    BrowserAnimationsModule, MaterialModule, TabsPageRoutingModule, TabsPageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+  BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+  BrowserAnimationsModule, MaterialModule, TabsPageRoutingModule, TabsPageModule,
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFirestoreModule,
+  FormsModule,
+  ReactiveFormsModule,
+  HttpClientModule
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    GooglePlus,
-    PhotoLibrary,
-    HttpClient,
-    NativeStorage,
-    AngularFireAuth,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  File,
+  Base64,
+  StatusBar,
+  SplashScreen,
+  GooglePlus,
+  PhotoLibrary,
+  HttpClient,
+  NativeStorage,
+  AngularFireAuth,
+  ImagePicker,
+  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
 
   ],
   bootstrap: [AppComponent]

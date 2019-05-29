@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule',canActivate:[] },
   { path: 'intro', loadChildren: './pages/intro/intro.module#IntroPageModule', canActivate:[IntroGuard]},
   { path: 'notification', loadChildren: './tabs/notification/notification.module#NotificationPageModule',canActivate:[] },
-  { path: 'addpost', loadChildren: './tabs/addpost/addpost.module#AddpostPageModule',canActivate:[] },
+  { path: 'addpos:img', loadChildren: './tabs/addpost/addpost.module#AddpostPageModule',canActivate:[] },
   { path: 'showprofile', loadChildren: './pages/showprofile/showprofile.module#ShowprofilePageModule',canActivate:[] },
   { path: 'imageselector', loadChildren: './pages/imageselector/imageselector.module#ImageselectorPageModule',canActivate:[] },
 ];

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addpost',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddpostPage implements OnInit {
 
-  constructor() { }
+  constructor(public route: ActivatedRoute) {
+  	console.log(this.route.snapshot.paramMap.get('img'));
+ }
 
   ngOnInit() {
   }

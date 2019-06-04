@@ -12,6 +12,7 @@ import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { Base64 } from '@ionic-native/base64/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { File } from '@ionic-native/file/ngx';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   providers:[
   ImagePicker,

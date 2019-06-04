@@ -15,9 +15,10 @@ const routes: Routes = [
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule',canActivate:[] },
   { path: 'intro', loadChildren: './pages/intro/intro.module#IntroPageModule', canActivate:[IntroGuard]},
   { path: 'notification', loadChildren: './tabs/notification/notification.module#NotificationPageModule',canActivate:[] },
-  { path: 'addpos:img', loadChildren: './tabs/addpost/addpost.module#AddpostPageModule',canActivate:[] },
-  { path: 'showprofile', loadChildren: './pages/showprofile/showprofile.module#ShowprofilePageModule',canActivate:[] },
+  { path: 'addpost/:img', loadChildren: './tabs/addpost/addpost.module#AddpostPageModule',canActivate:[] },
   { path: 'imageselector', loadChildren: './pages/imageselector/imageselector.module#ImageselectorPageModule',canActivate:[] },
+  { path: 'show-profile/:id', loadChildren: './tabs/show-profile/show-profile.module#ShowProfilePageModule' },
+
 ];
 @NgModule({
   imports: [

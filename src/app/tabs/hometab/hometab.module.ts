@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { HometabPage } from './hometab.page';
+import { MaterialModule } from 'src/app/material/material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -19,6 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    MaterialModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [HometabPage]

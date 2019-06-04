@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="in.zinfinity.acc0090" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="in.zinfinity.acc009" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Struggling Stars</name>
     <description>Struggling Stars Official App </description>
     <author email="info@zinfinity.in" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -92,4 +92,5 @@
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
     </plugin>
     <allow-navigation href="http://192.168.0.101:8100" sessionid="31533ac5" />
+    <allow-navigation href="http://192.168.0.9:8100" sessionid="7a5dbf91" />
 </widget>

@@ -17,6 +17,11 @@ export class AuthService {
    apiUrl = 'https://acc009specback.herokuapp.com/';
    isLoggedIn = false;
    token:any;
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin':'*' 
+    })
+  };
 
   constructor(private storage: NativeStorage,private firebaseService: FirebaseService,public afAuth: AngularFireAuth,private http: HttpClient){
 
@@ -33,22 +38,25 @@ export class AuthService {
   // }
 
   login(username: String, password: String) {
-    return this.http.post(this.apiUrl + 'users/signin?username='+username+'&password='+ password,{}
+    
+    return this.http.post(this.apiUrl + 'users/signin?username='+username+'&password='+ password,{},this.httpOptions
     ).pipe(
-      tap((token:any) => {
-        this.token = token.token
+      tap((data:any) => {
+        console.log('data from authservice'+JSON.stringify(data));
+        this.token = data.token
         console.log(this.token);
         localStorage.setItem('token', this.token),
-        this.token = token;
+        localStorage.setItem('userId', data.username),
+        //this.token = token;
         this.isLoggedIn = true;
-        return token;
+        return data;
       }),
     );
   }
 
   register(username: String, mobno: String, email: String, password: String) {
     return this.http.post(this.apiUrl + 'users/signup',
-      {username: username, phoneno: mobno, email: email, password: password}
+      {username: username, phoneno: mobno, email: email, password: password}, this.httpOptions
     )
   }
 

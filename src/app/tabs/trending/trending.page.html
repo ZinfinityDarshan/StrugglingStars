@@ -1,18 +1,25 @@
 <ion-content>
+    <ion-progress-bar type="indeterminate" *ngIf="pageloadbool"></ion-progress-bar>
     <div style="display: flex; justify-content: center">
-      <mat-form-field appearance="outline" style="width: 95%; justify-content: center">
+      <form [formGroup]="autoForm" style="width: 94%; justify-content: center; margin-top: 10px">
+      <mat-form-field appearance="outline" style="width: 100%; justify-content: center">
           <mat-label>Search profiles</mat-label>
-          <input matInput placeholder="Placeholder">
+          <input matInput placeholder="serach profile" [matAutocomplete]="auto" formControlName="profilectrl" >
+          <mat-autocomplete #auto="matAutocomplete" panelWidth="100%" (optionSelected)=getFullProfile($event.option.value)>
+              <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
+              <mat-option *ngFor="let user of profiles" [value]="user.userId">
+                <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                <span>{{user.username}}</span> 
+                <!-- <small>Population: {{state.population}}</small> -->
+              </mat-option>
+          </mat-autocomplete>
           <ion-icon matSuffix ios="ios-search" md="md-search" style="font-size: 24px"></ion-icon>
+
       </mat-form-field> 
+    </form>
     </div>
-      <div class="list">
-          <div scrollX="true">
-              <ion-chip>
-                <ion-icon name="heart" color="dark"></ion-icon>
-                <ion-label>Default</ion-label>
-              </ion-chip>
-            </div>
-      </div>
+    <mat-chip-list style="margin-bottom: 5px">
+      <mat-chip color="primary" *ngFor="let sub of subList; let i = index" >{{sub.subjectname}}</mat-chip>
+    </mat-chip-list>
 <mat-divider></mat-divider>
 </ion-content>

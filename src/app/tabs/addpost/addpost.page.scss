@@ -23,4 +23,26 @@
    
   .one-image {
     margin: 2px;
+  }
+  .head{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
   } 
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 30px;
+    
+}

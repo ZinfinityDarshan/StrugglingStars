@@ -1,79 +1,62 @@
-<div class="header">
-    <div class="brand">Home</div>
+  <div class="header">
+      <div class="brand">Home</div>
   </div>
   
   <ion-content>
-    <div class="posts">
+    <!-- Crescent -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>   
+    <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
+    <div class="posts" *ngFor="let post of posts">
       <ion-card>
-        <ion-card-header>
-          <ion-card-title>Salman Khan</ion-card-title>
-        </ion-card-header>
+        <!-- <ion-card-header> -->
+            <ion-item>
+                <ion-avatar item-left>
+                  <img alt="./profile.svg"  src="{{post.profilepicurl}}"><br>
+                  <span>{{post.location}}</span>
+                </ion-avatar>
+                <h5 style="margin-left: 20px">{{post.username}}</h5>
+            </ion-item><br>
+        <!-- </ion-card-header> -->
         <div class="image">
-                      <img src="https://www.india.com/wp-content/uploads/2017/06/FotorCreated-11.jpg">   
+          <img src={{post.img[0]}}>   
         </div>
         <ion-card-content>
           <div class="buttons">
-            <ion-icon name="heart"></ion-icon>
-            <ion-icon name="chatbubbles"></ion-icon>
+            <!-- <ion-icon name="heart"></ion-icon> -->
+            <button mat-icon-button color="warn">
+                <!-- <ion-icon name="heart" style="font-size: 28px"></ion-icon> -->
+                <ion-icon ios="ios-star-outline" md="md-star-outline" style="font-size: 40px" *ngIf="!likebool"></ion-icon>
+                <ion-icon name="star"  style="font-size: 40px" *ngIf="likebool"></ion-icon>
+            </button>
+            <!-- <ion-icon name="chatbubbles"></ion-icon> -->
           </div>
   
           <div class="comment">
-            <a href="#">View All 6 Comments</a>
-            <div class="addcomment">
-              <input type="text" placeholder="Add a comment...">
-              <ion-button fill="clear">Post</ion-button>
+            <a>View All {{post.commentsCount}} Comments</a>
+            <div style="display: flex; flex-direction: row; justify-content: space-around">
+                <mat-form-field appearance="outline" style="width: 90%; justify-content: center
+                ;margin-right: 0%; margin-left: 0%; padding-left: 0%">
+                    <mat-label >Add a comment</mat-label>
+                    <input #comment matInput placeholder="Title">
+                    <!-- <ion-button fill="clear">Post</ion-button> -->
+                    <!-- <ion-icon matSuffix ios="ios-search" md="md-search" style="font-size: 24px"></ion-icon> -->
+                </mat-form-field>
+                <button mat-button style="margin-left: 0%; margin-bottom: 20px; margin-right: 0%" (click)="addComment(comment.value,post.user_Id,post.postId)"><ion-icon  matSuffix ios="ios-add" md="md-add" style="font-size: 35px;
+                "></ion-icon></button>
+                
             </div>
           </div>
         </ion-card-content>
-      </ion-card> 
-  
-  
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Hrithik Roshan</ion-card-title>
-        </ion-card-header>
-        <div class="image">
-            <img src="https://www.cine-tales.com/wp-content/uploads/2018/02/Bollywood-actors-1.jpg">
-        </div>
-        <ion-card-content>
-          <div class="buttons">
-            <ion-icon name="heart"></ion-icon>
-            <ion-icon name="chatbubbles"></ion-icon>
-          </div>
-          <div class="comment">
-            <a href="#">View All 6 Comments</a>
-            <div class="addcomment">
-              <input type="text" placeholder="Add a comment...">
-              <ion-button fill="clear">Post</ion-button>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card> 
-  
-  
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>SRK</ion-card-title>
-        </ion-card-header>
-        <div class="image">
-            <img src="https://www.india.com/wp-content/uploads/2017/06/FotorCreated-11.jpg">        
-        </div>
-        <ion-card-content>
-          <div class="buttons">
-            <ion-icon name="heart"></ion-icon>
-            <ion-icon name="chatbubbles"></ion-icon>
-          </div>
-  
-          <div class="comment">
-            <a href="#">View All 6 Comments</a>
-            <div class="addcomment">
-              <input type="text" placeholder="Add a comment...">
-              <ion-button fill="clear">Post</ion-button>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card> 
-    </div>     
+    </ion-card>
+    </div> 
+     
   </ion-content>
   
   

@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { MaterialModule } from 'src/app/material/material/material.module';
 
-import { ShowprofilePage } from './showprofile.page';
+import { ShowProfilePage } from './show-profile.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ShowprofilePage
+    component: ShowProfilePage
   }
 ];
 
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ShowprofilePage]
+  declarations: [ShowProfilePage]
 })
-export class ShowprofilePageModule {}
+export class ShowProfilePageModule {}

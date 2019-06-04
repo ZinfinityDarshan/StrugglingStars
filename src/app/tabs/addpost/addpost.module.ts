@@ -6,6 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AddpostPage } from './addpost.page';
+import { MaterialModule } from 'src/app/material/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 const routes: Routes = [
   {
@@ -18,7 +23,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
+    MaterialModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [AddpostPage]

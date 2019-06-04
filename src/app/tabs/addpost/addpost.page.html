@@ -1,5 +1,51 @@
-<ion-content>
-  <div class="images">
-    <h1>sdssf</h1>
-  </div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="float: right;"> Share</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="align-content: center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+    </ion-card-header>
+  
+    <ion-card-content>
+        <!-- <ion-slides pager="true" *ngFor="let im of img">
+            <ion-slide>
+                <ion-img [src]="im"></ion-img>
+            </ion-slide>
+        </ion-slides> -->
+        <form>
+            <form  [formGroup]="addPostForm"  class="content">
+                <!-- <mat-form-field appearance="outline" >
+                    <mat-label >DP</mat-label>
+                     <search matInput placeholder="file"></search> 
+                </mat-form-field> -->
+                <mat-form-field appearance="outline" >
+                    <mat-label >Title</mat-label>
+                    <input formControlName="title" matInput placeholder="Title">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Discription</mat-label>
+                    <input formControlName="dscp" matInput placeholder="Discription">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Location</mat-label>
+                  <input formControlName="location" matInput placeholder="Location">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>#Tags</mat-label>
+                  <input matInput formControlName="tags" placeholder="Type Tag">
+                </mat-form-field>
+                <!-- <mat-form-field appearance="outline">
+                  <mat-label>Confirm Password</mat-label>
+                  <input matInput placeholder="Confirm Password">
+                </mat-form-field><br> -->
+                <button class="submit" mat-raised-button color="primary" (click)=addPost(addPostForm.value)>Share</button>
+              </form>
+        </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

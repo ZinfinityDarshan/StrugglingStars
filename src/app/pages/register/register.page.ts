@@ -17,7 +17,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 })
 export class RegisterPage implements OnInit {
 
-  private loginFrom : FormGroup;
+  loginFrom : FormGroup;
   username:any;
   password:any;
   data:any;
@@ -48,8 +48,8 @@ export class RegisterPage implements OnInit {
             //   });
             // }
 
-            login(form: NgForm) {
-              this.authService.login(this.loginFrom.controls['username'].value, this.loginFrom.controls['password'].value).subscribe(
+            login(form) {
+              this.authService.login(form.username, form.password).subscribe(
                 data => {
                   this.storage.getItem('token')
                   .then(

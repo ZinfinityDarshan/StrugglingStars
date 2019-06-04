@@ -66,4 +66,15 @@
   
     }
   }
-  
+  .list{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around
+  }
+  .spinnerCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

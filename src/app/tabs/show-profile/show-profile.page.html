@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+      </ion-toolbar>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-progress-bar type="indeterminate" *ngIf="pagebool"></ion-progress-bar>
+  <div class="content">
+    <ion-avatar class="item-avatar">
+        <img src="{{profile.profilePicUrl}}">
+    </ion-avatar>
+  </div>
+  <div class="contentnew">
+    <div style="margin-top: 30px; font-size: 25px">
+        <ion-grid>
+            <ion-row align-items-center>
+              <ion-col align-self-center style="margin-right: 15px">
+                <ion-row><strong>Followers</strong></ion-row>
+                <br>
+                <ion-row>{{profile.followerCount}}</ion-row>
+              </ion-col>
+              <ion-col align-self-center style="margin-right: 15px">
+                  <ion-row><strong>Following</strong></ion-row>
+                  <br>
+                  <ion-row>{{profile.followingcount}}</ion-row>
+              </ion-col>
+              <ion-col align-self-center>
+                  <ion-row><strong>Posts</strong></ion-row>
+                  <br>
+                  <ion-row>{{profile.postCount}}</ion-row>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
+  </div>
+  <div class="bio">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Bio</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          {{profile.bio}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="tabs">
+        <div class="tab" (click)="enable('image')">
+          <ion-button fill="clear" [class.active]="showimage"><ion-icon name="image"></ion-icon></ion-button>
+        </div>
+        <div class="tab" (click)="enable('video')">
+          <ion-button fill="clear" [class.active]="showvideo"><ion-icon name="videocam"></ion-icon></ion-button>
+        </div>
+        <div class="tab" (click)="enable('document')">
+          <ion-button fill="clear" [class.active]="showdocument"><ion-icon name="document"></ion-icon></ion-button>
+        </div>
+    </div>
+    <div class="gallary">
+        <div class="images" *ngIf="showimage">
+          <div class="img">
+            <img src="https://www.india.com/wp-content/uploads/2017/06/FotorCreated-11.jpg">  
+          </div>
+          <div class="img">
+            <img src="https://www.india.com/wp-content/uploads/2017/06/FotorCreated-11.jpg">  
+          </div>
+          <div class="img">
+            <img src="https://www.india.com/wp-content/uploads/2017/06/FotorCreated-11.jpg">  
+          </div>
+        </div>
+        <div class="videos" *ngIf="showvideo">
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+          <div class="video"></div>
+        </div>
+        <div class="document" *ngIf="showdocument">
+          Document
+        </div>
+      </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="person-add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

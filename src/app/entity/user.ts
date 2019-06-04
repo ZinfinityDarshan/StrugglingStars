@@ -1,8 +1,10 @@
 export interface User {
 
-    userId: string,
+    //userId: string,
     username: string,
-    email: string,
-    password: string,
-    active: string
+    token: string,
+    status: boolean,
+    errorCode: string,
+    errorMessage: string,
+
 }

@@ -1,37 +1,72 @@
 <ion-content >
   <ion-grid style="height: 100%">
     <ion-row justify-content-center align-items-center style="height: 100%">
-        <ion-card style="background-color: aliceblue">
-          <ion-card-content >
-            <form  [formGroup]="regiFrom" (ngSubmit)="register()"  class="content">
-              <!-- <mat-form-field appearance="outline" >
-                  <mat-label >DP</mat-label>
-                   <search matInput placeholder="file"></search> 
-              </mat-form-field> -->
-              <mat-form-field appearance="outline" >
-                  <mat-label >Email</mat-label>
-                  <input formControlName="email" matInput placeholder="Email">
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                  <mat-label>Username</mat-label>
-                  <input formControlName="username" matInput placeholder="Username">
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Phone Number</mat-label>
-                <input formControlName="mobno" matInput placeholder="Phone no">
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password" placeholder="Password">
-              </mat-form-field>
-              <!-- <mat-form-field appearance="outline">
-                <mat-label>Confirm Password</mat-label>
-                <input matInput placeholder="Confirm Password">
-              </mat-form-field><br> -->
-              <button class="button" mat-raised-button color="warn">Register</button>
-            </form>
-          </ion-card-content>
-        </ion-card>
+
+        <mat-vertical-stepper [linear]="false" #stepper>
+            
+            <mat-step [stepControl]="regiFrom">
+                <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
+                  <!-- <ion-card style="background-color: aliceblue">
+                      <ion-card-content > -->
+                        <form  [formGroup]="regiFrom" class="content">
+                          <!-- <mat-form-field appearance="outline" >
+                              <mat-label >DP</mat-label>
+                              <search matInput placeholder="file"></search> 
+                          </mat-form-field> -->
+                          <mat-form-field appearance="outline" >
+                              <mat-label >Email</mat-label>
+                              <input formControlName="email" matInput placeholder="Email">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Username</mat-label>
+                              <input formControlName="username" matInput placeholder="Username">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input formControlName="mobno" matInput placeholder="Phone no">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput formControlName="password" placeholder="Password">
+                          </mat-form-field>
+                          <!-- <mat-form-field appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput placeholder="Confirm Password">
+                          </mat-form-field><br> -->
+                          <button mat-raised-button color="warn" (click)="register(regiFrom.value)" >Register</button><br>
+                          <button mat-raised-button color="primary" matStepperNext [disabled]="registerbool">Next</button>
+                        </form>
+                      <!-- </ion-card-content>
+                    </ion-card> -->
+                    
+            </mat-step>
+            <mat-step>
+                <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
+                  <ng-template matStepLabel>Select Your Profile Pic</ng-template>
+                  <!-- <div *ngFor="let sub of subjects">
+                      <mat-checkbox class="example-margin" value={{sub}} (change)="updateSubjects(sub)">{{sub}}</mat-checkbox>
+                  </div> -->
+                  <ion-fab vertical="center" horizontal="center" slot="fixed" *ngIf="!profilepicbool" style="margin-top: 3px; margin-bottom: 3px;" 
+                  (click)="getImages()">
+                      <ion-fab-button>
+                        <ion-icon name="add"></ion-icon>
+                      </ion-fab-button>
+                    </ion-fab>
+                    <ion-avatar style="margin-top: 10px" *ngIf="profilepicbool">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                  <!-- <button class="button" mat-raised-button color="warn" (click)="addSubjectsToProfile()">Add Topics</button> -->
+              </mat-step>
+            <mat-step>
+              <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
+                <ng-template matStepLabel>Select Your Topics</ng-template>
+                <div *ngFor="let sub of subjects">
+                    <mat-checkbox class="example-margin" value={{sub}} (change)="updateSubjects(sub)">{{sub}}</mat-checkbox>
+                </div>
+                <button class="button" mat-raised-button color="warn" (click)="addSubjectsToProfile()">Add Topics</button>
+            </mat-step>
+          </mat-vertical-stepper>
+
     </ion-row>
   </ion-grid>
 </ion-content>  

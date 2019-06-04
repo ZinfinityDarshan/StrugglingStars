@@ -1,0 +1,70 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.item-avatar  {     
+    width:100% !important;  
+    height : 100% !important;  
+    max-width: 100px !important;  //any size
+    max-height: 100px !important; //any size
+    margin-top: 10%; 
+}
+.contentnew{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.bio {
+    border-bottom: 1px solid gainsboro;
+  }
+.gallary {
+    // padding: 10px;
+  
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  
+      .img {
+        width: 120px;
+        margin: 5px;
+      }
+    }
+  
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+      .video {
+        width: 120px;
+        height: 120px;
+        background: greenyellow;
+        margin: 5px;
+      }
+    }
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gainsboro;
+  
+    .tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      ion-button {
+        font-size: 1.1rem;
+        margin: 0;
+        height: 70px;
+        width: 70px;
+        color: black; 
+      }
+      
+      .active {
+        color: #3880ff;
+      }
+    }
+  }

@@ -10,6 +10,7 @@ export class NotificationPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

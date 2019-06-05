@@ -19,6 +19,7 @@ export class HometabPage implements OnInit, OnChanges, AfterViewInit{
   comment: PostComment = new PostComment();
   spinbool: boolean = true;
   likebool: boolean = false;
+  commentbool: boolean = false;
  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -58,6 +59,7 @@ export class HometabPage implements OnInit, OnChanges, AfterViewInit{
   }
 
   addComment(comment: string, userId: string, postId:string){
+    this.commentbool = true;
     this.comment.comment = comment;
     this.comment.postId = postId;
     this.comment.requester = userId;
@@ -71,6 +73,7 @@ export class HometabPage implements OnInit, OnChanges, AfterViewInit{
     .subscribe(
       res => {
        console.log(res); 
+       this.commentbool = false;
     },
       error =>{
         console.log(error);
@@ -83,4 +86,5 @@ export class HometabPage implements OnInit, OnChanges, AfterViewInit{
   ngAfterViewInit(){
     this.getHomePosts();
   }
+
 }

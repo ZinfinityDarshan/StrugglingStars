@@ -50,6 +50,7 @@ export class AccountPage implements OnInit {
     this.http.get('https://acc009specback.herokuapp.com/secure/profile/getProfile/'+userId, this.httpOptions).subscribe((data: Profile) =>{
       console.log(data);
       this.profile = data;
+      console.log(Profile)
     });
   }
 

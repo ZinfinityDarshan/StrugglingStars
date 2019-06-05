@@ -30,7 +30,7 @@ export class TrendingPage implements OnInit {
       'Access-Control-Allow-Origin':'*' 
     })
   };
-  posts: AddPostRequest[];
+  posts: AddPostRequest[] = [];
   colors=["warn","primary","accent"];
 
 
@@ -54,7 +54,8 @@ export class TrendingPage implements OnInit {
         console.log('profile' + profiles)
         this.profiles = profiles
       
-      })
+      });
+      this.getTrendingPosts();
   }
 
   
@@ -88,6 +89,7 @@ export class TrendingPage implements OnInit {
   getTrendingPosts(){
     this.http.get('https://acc009specback.herokuapp.com/'+'secure/streaming/'+'getTrends',this.httpOptions).subscribe((data: AddPostRequest) =>{
       this.posts.push(data);
+      console.log(this.posts);
     });
   }
 }

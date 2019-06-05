@@ -56,7 +56,8 @@ export class TrendingPage implements OnInit {
         console.log('profile' + profiles)
         this.profiles = profiles
       
-      })
+      });
+      this.getTrendingPosts();
   }
 
   

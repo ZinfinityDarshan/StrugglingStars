@@ -24,5 +24,9 @@
       </mat-chip-list>
     </div>
   <mat-divider style="margin-top: 10px"></mat-divider>
-  
+  <div class="postcontainer">
+    <div *ngFor="let posts of newposts">
+      <img src={{this.posts.img}} class="img" (click)="navigatetopost(this.posts.postId)">
+    </div>
+  </div>
 </ion-content>

@@ -13,7 +13,7 @@ export class AddPostRequest {
     likes_id: string;
     comments_ids: string[];
     recent: string;
-    likedByRequester: string;
+    likedByRequester: boolean;
     location: String;
     commentsCount: String;
 }

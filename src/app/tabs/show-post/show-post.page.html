@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar type="indeterminate" *ngIf="pagebool"></ion-progress-bar>
+  <ion-card>
+        <ion-item>
+            <ion-avatar item-left>
+              <img alt="./profile.svg"  src="{{post.profilepicurl}}"><br>
+              <span>{{post.location}}</span>
+            </ion-avatar>
+            <h5 style="margin-left: 20px">{{post.username}}</h5>
+        </ion-item><br>
+    <div class="image">
+      <img src={{post.img[0]}}>   
+    </div>
+    <ion-card-content>
+      <div class="buttons">
+        <!-- <ion-icon name="heart"></ion-icon> -->
+        <button mat-icon-button color="warn">
+            <!-- <ion-icon name="heart" style="font-size: 28px"></ion-icon> -->
+            <ion-icon ios="ios-star-outline" md="md-star-outline" style="font-size: 40px" *ngIf="!likebool"></ion-icon>
+            <ion-icon name="star"  style="font-size: 40px" *ngIf="likebool"></ion-icon>
+        </button>
+        <!-- <ion-icon name="chatbubbles"></ion-icon> -->
+      </div>
+
+      <div class="comment">
+        <a>View All {{post.commentsCount}} Comments</a>
+        <div style="display: flex; flex-direction: row; justify-content: space-around">
+            <mat-form-field appearance="outline" style="width: 90%; justify-content: center;margin-right: 0%; margin-left: 0%; padding-left: 0%">
+                <mat-label >Add a comment</mat-label>
+                <input #comment matInput placeholder="Title">
+                <!-- <ion-button fill="clear">Post</ion-button> -->
+                <!-- <ion-icon matSuffix ios="ios-search" md="md-search" style="font-size: 24px"></ion-icon> -->
+            </mat-form-field>
+            <button mat-button style="margin-left: 0%; margin-bottom: 20px; margin-right: 0%" (click)="addComment(comment.value,post.user_Id,post.postId)">
+              <ion-icon  matSuffix ios="ios-send" md="md-send" style="font-size: 35px;"></ion-icon>
+            </button>
+            
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

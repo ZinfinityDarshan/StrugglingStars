@@ -1,3 +1,4 @@
+import { AddPostRequest } from './../../entity/add-post-request';
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Profile } from 'src/app/entity/profile';
@@ -20,12 +21,13 @@ export class AccountPage implements OnInit {
     })
   };
   profile: Profile;
-
+  posts: AddPostRequest;
   
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
     this.getProfile(localStorage.getItem('userId'));
+    this.getposts(localStorage.getItem('userId'));
   }
 
   enable(name: any) {
@@ -49,6 +51,13 @@ export class AccountPage implements OnInit {
       console.log(data);
       this.profile = data;
     });
+  }
+
+  getposts(userId: string) {
+    this.http.get('https://acc009specback.herokuapp.com/secure/post/getAllPostsForUser/' + userId, this.httpOptions).subscribe((data: AddPostRequest) => {
+      console.log(data);
+      this.posts = data;
+    })
   }
 
 }

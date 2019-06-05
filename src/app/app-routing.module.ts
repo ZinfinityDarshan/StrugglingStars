@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'addpost/:img', loadChildren: './tabs/addpost/addpost.module#AddpostPageModule',canActivate:[] },
   { path: 'imageselector', loadChildren: './pages/imageselector/imageselector.module#ImageselectorPageModule',canActivate:[] },
   { path: 'show-profile/:id', loadChildren: './tabs/show-profile/show-profile.module#ShowProfilePageModule' },
-
+  { path: 'show-post/:id', loadChildren: './tabs/show-post/show-post.module#ShowPostPageModule' },
 ];
 @NgModule({
   imports: [

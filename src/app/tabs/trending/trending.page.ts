@@ -30,7 +30,8 @@ export class TrendingPage implements OnInit {
       'Access-Control-Allow-Origin':'*' 
     })
   };
-  posts: AddPostRequest[];
+  posts: AddPostRequest[] = [];
+  newposts;
   colors=["warn","primary","accent"];
 
 
@@ -43,6 +44,7 @@ export class TrendingPage implements OnInit {
   ngOnInit() {
 
     this.getAllSubjects();
+    this.getTrendingPosts();
     this.autoForm.get('profilectrl').valueChanges
       .pipe(        
         debounceTime(300),
@@ -88,6 +90,12 @@ export class TrendingPage implements OnInit {
   getTrendingPosts(){
     this.http.get('https://acc009specback.herokuapp.com/'+'secure/streaming/'+'getTrends',this.httpOptions).subscribe((data: AddPostRequest) =>{
       this.posts.push(data);
+      this.newposts = this.posts[0];
+      console.log(this.newposts);
     });
+  }
+
+  navigatetopost(id) {
+    this.router.navigate(['/show-post', id]);
   }
 }

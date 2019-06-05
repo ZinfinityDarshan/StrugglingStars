@@ -1,0 +1,55 @@
+ion-card {
+  margin-bottom: 25px;
+
+  .image {
+    width: 100%;
+  }
+
+  ion-card-content {
+
+    .buttons {
+
+      ion-icon {
+        font-size: 1rem;
+        padding-right: 10px;
+      }
+    }
+
+    .comment {
+
+      a {
+        color: gray;
+        text-decoration: none;
+        font-size: .8rem;
+        margin-top: 10px;
+      }
+
+      .addcomment{
+        display: flex;
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 10px;
+        border-top: 1px solid gainsboro;
+
+        input {
+          width: 80vw;
+          border: none;
+
+          &::placeholder {
+            color: silver;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+        
+        ion-button {
+          width: 20vw;
+        }
+      }
+
+    }
+  }
+
+}

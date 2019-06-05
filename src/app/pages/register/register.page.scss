@@ -3,15 +3,34 @@
     justify-content: center;
     flex-direction: column;
     align-content: space-between;
-    
+    background: white;
 }
-ion-card-content{
-    padding: 30px;
+
+.container {
+    background: white;
 }
+
+.form-content {
+    background: white;
+    width: 85vw;
+    padding: 40px 25px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 4px;
+}
+
+.login {
+    border: 1px solid #FFDF00;
+    background: white;
+}
+
+.register {
+    background: #FFDF00;
+    box-shadow: 0 0 5px gainsboro;
+}
+
 .button{
     width: 100%;
-    margin: 5px
-}
-ion-content{
-    --ion-background-color: #2d2c28;
+    padding: 10px;
+    border-radius: 2px;
+    margin-bottom: 10px;
 }

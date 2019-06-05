@@ -18,8 +18,11 @@
       </mat-form-field> 
     </form>
     </div>
-    <mat-chip-list style="margin-bottom: 5px">
-      <mat-chip color="primary" *ngFor="let sub of subList; let i = index" >{{sub.subjectname}}</mat-chip>
-    </mat-chip-list>
-<mat-divider></mat-divider>
+    <div class="subjectcontainer">
+      <mat-chip-list style="margin-bottom: 5px;">
+        <mat-chip color="primary" *ngFor="let sub of subList; let i = index" >{{sub.subjectname}}</mat-chip>
+      </mat-chip-list>
+    </div>
+  <mat-divider style="margin-top: 10px"></mat-divider>
+  
 </ion-content>

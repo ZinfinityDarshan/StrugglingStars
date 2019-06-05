@@ -1,4 +1,4 @@
-<ion-content >
+<!-- <ion-content >
   <ion-grid style="height: 100%">
     <ion-row justify-content-center align-items-center style="height: 100%">
         <ion-card style="background-color: aliceblue">
@@ -15,10 +15,32 @@
               <button class="button" mat-raised-button color="primary" (click) ="login(loginFrom.value)">Login</button>
             </form>
               <button class="button" mat-raised-button color="warn" (click)="register()">Register</button>
-<!--               <button class="button" mat-raised-button color="warn" (click) = "googleLogin()">Google Login</button> -->
+              <button class="button" mat-raised-button color="warn" (click) = "googleLogin()">Google Login</button>
             </ion-card-content>
           </ion-card>
       </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+<ion-content>
+  <ion-grid style="height: 100%" class="container">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <div class="form-content">
+        <form [formGroup]="loginFrom" class="content">
+            <mat-form-field appearance="outline" >
+                <mat-label >Username</mat-label>
+                <input formControlName="username" matInput placeholder="Username">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" formControlName="password" matInput placeholder="Password">
+            </mat-form-field><br>
+            <button class="button login" (click) ="login(loginFrom.value)">Login</button>
+          </form>
+            <button class="button register" (click)="register()">Register</button>
+            <!-- <button class="button" mat-raised-button color="warn" (click) = "googleLogin()">Google Login</button> -->
+      </div>
+    </ion-row>
   </ion-grid>
 </ion-content>
 

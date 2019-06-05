@@ -1,15 +1,17 @@
 .item{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-
+    padding: 20px 0;
+    ion-label {
+        margin: 5px 0;
+        font-weight: bold;
+    }
     .fontfornotification{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 15px;
+        margin: 0;
     }
 }
-.list{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+.items {
+    ion-item {
+        padding: 0;
+    }
 }

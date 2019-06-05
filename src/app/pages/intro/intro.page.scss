@@ -12,6 +12,22 @@
 	line-height: 100px;
 	background: #2d2c28
 }
+.image1 {
+	background: url('../../../assets/images/Screen1.jpg');
+}
+.image2 {
+	background: url('../../../assets/images/Screen2.jpg');
+}
+.image3 {
+	background: url('../../../assets/images/Screen3.jpg');
+}
 .image{
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
 	background-size: cover;
 }

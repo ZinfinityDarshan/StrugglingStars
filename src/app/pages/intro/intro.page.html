@@ -14,7 +14,11 @@
     </ion-slide>
     <ion-slide>
      <img src="../assets/images/Screen3.jpg" class="image">
-      <button mat-fab class="beginBtn" (click)="login()">Begin</button>
+     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="login()" color="accent">      
+        <ion-icon name="arrow-round-forward"></ion-icon>      
+      </ion-fab-button>
+    </ion-fab>
     </ion-slide>
   </ion-slides>
 </ion-content>

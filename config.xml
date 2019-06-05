@@ -3,7 +3,7 @@
     <name>Struggling Stars</name>
     <description>Struggling Stars Official App </description>
     <author email="info@zinfinity.in" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.6:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -93,4 +93,5 @@
     </plugin>
     <allow-navigation href="http://192.168.0.101:8100" sessionid="31533ac5" />
     <allow-navigation href="http://192.168.0.9:8100" sessionid="7a5dbf91" />
+    <allow-navigation href="http://192.168.0.6:8100" sessionid="b2e3f071" />
 </widget>

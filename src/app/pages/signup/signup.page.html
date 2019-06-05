@@ -2,7 +2,7 @@
   <ion-grid style="height: 100%">
     <ion-row justify-content-center align-items-center style="height: 100%">
 
-        <mat-vertical-stepper [linear]="false" #stepper>
+        <mat-vertical-stepper [linear]="true" #stepper>
             
             <mat-step [stepControl]="regiFrom">
                 <ion-progress-bar type="indeterminate" *ngIf="spinbool"></ion-progress-bar>
@@ -46,12 +46,13 @@
                   <!-- <div *ngFor="let sub of subjects">
                       <mat-checkbox class="example-margin" value={{sub}} (change)="updateSubjects(sub)">{{sub}}</mat-checkbox>
                   </div> -->
-                  <ion-fab vertical="center" horizontal="center" slot="fixed" *ngIf="!profilepicbool" style="margin-top: 3px; margin-bottom: 3px;" 
+                  <!-- <ion-fab vertical="center" horizontal="center" slot="fixed" *ngIf="!profilepicbool" style="margin-top: 3px; margin-bottom: 3px;" 
                   (click)="getImages()">
                       <ion-fab-button>
                         <ion-icon name="add"></ion-icon>
                       </ion-fab-button>
-                    </ion-fab>
+                    </ion-fab> -->
+                    <button mat-fab color="accent" (click)="getImages()"><ion-icon name="cloud-upload" style="margin-top: 3px; font-size: 28px;"></ion-icon></button>
                     <ion-avatar style="margin-top: 10px" *ngIf="profilepicbool">
                         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
                     </ion-avatar>

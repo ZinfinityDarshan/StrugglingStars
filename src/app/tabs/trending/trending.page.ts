@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'src/app/entity/subject';
 import { Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { AddPostRequest } from 'src/app/entity/add-post-request';
 
 @Component({
   selector: 'app-trending',
@@ -29,6 +30,7 @@ export class TrendingPage implements OnInit {
       'Access-Control-Allow-Origin':'*' 
     })
   };
+  posts: AddPostRequest[];
   colors=["warn","primary","accent"];
 
 
@@ -81,5 +83,11 @@ export class TrendingPage implements OnInit {
 
   getRandomColor(i: number){
     return this.colors[i];
+  }
+
+  getTrendingPosts(){
+    this.http.get('https://acc009specback.herokuapp.com/'+'secure/streaming/'+'getTrends',this.httpOptions).subscribe((data: AddPostRequest) =>{
+      this.posts.push(data);
+    });
   }
 }

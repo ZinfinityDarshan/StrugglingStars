@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Profile } from 'src/app/entity/profile';
+import { AddPostRequest } from 'src/app/entity/add-post-request';
 
 @Component({
   selector: 'app-show-profile',
@@ -22,13 +23,15 @@ export class ShowProfilePage implements OnInit {
   profile: Profile;
   pagebool: boolean = false;
   userId: string;
+  posts: AddPostRequest[] = [];
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.route.params.subscribe( params => {console.log('parameter in show profile'+JSON.stringify(params.id))
     this.userId = params.id;
     this.pagebool = true;
     http.get('https://acc009specback.herokuapp.com/secure/profile'+'/getProfile/'+this.userId, this.httpOptions).subscribe(
       (data: Profile) => {
-        console.log(JSON.stringify(data))
+        console.log(JSON.stringify(data));
+        this.getTrendingPosts();
         this.profile = data;
         this.pagebool = false;
       });
@@ -52,6 +55,12 @@ export class ShowProfilePage implements OnInit {
       this.showdocument = true;
       this.showvideo = false;
     }
+  }
+  getTrendingPosts(){
+    this.http.get('https://acc009specback.herokuapp.com/'+'secure/streaming/'+'getTrends',this.httpOptions).subscribe((data: AddPostRequest) =>{
+      console.log("postdata"+data);
+      this.posts.push(data);
+    });
   }
 
 }

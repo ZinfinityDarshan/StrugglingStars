@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Profile } from 'src/app/entity/profile';
 
 @Component({
   selector: 'app-account',
@@ -10,10 +12,20 @@ export class AccountPage implements OnInit {
   showimage = true;
   showvideo = false;
   showdocument = false;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token'),
+      'Access-Control-Allow-Origin':'*' 
+    })
+  };
+  profile: Profile;
 
-  constructor() { }
+  
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.getProfile(localStorage.getItem('userId'));
   }
 
   enable(name: any) {
@@ -30,6 +42,13 @@ export class AccountPage implements OnInit {
       this.showdocument = true;
       this.showvideo = false;
     }
+  }
+
+  getProfile(userId: string){
+    this.http.get('https://acc009specback.herokuapp.com/secure/profile/getProfile/'+userId, this.httpOptions).subscribe((data: Profile) =>{
+      console.log(data);
+      this.profile = data;
+    });
   }
 
 }
